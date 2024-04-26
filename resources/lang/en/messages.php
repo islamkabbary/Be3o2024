@@ -79,7 +79,7 @@ return [
     'Welcome' => 'Welcome',
     'en' => 'English',
     'ar' => 'Arabic',
-    '' => '',
+    'This user already exists' => 'This user already exists',
     '' => '',
     '' => '',
     '' => '',

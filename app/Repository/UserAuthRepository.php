@@ -39,12 +39,17 @@ class UserAuthRepository implements UserAuthInterface
     public function register(UserRequest $request)
     {
         $data = $request->except('_token', '_method', 'image');
-        $data['code'] = rand(10000, 1000000);
-        $data['password'] = Hash::make($request->password);
-        if ($request->hasFile('image')) {
-            $data['image'] = FileHelper::upload_file('Users', $request->image);
+        $oldUser = User::where('email', $data['email'])->orWhere('phone', $data['phone'])->first();
+        if (!$oldUser) {
+            $data['code'] = rand(10000, 1000000);
+            $data['password'] = Hash::make($request->password);
+            if ($request->hasFile('image')) {
+                $data['image'] = FileHelper::upload_file('Users', $request->image);
+            }
+            $user = User::create($data);
+        }else{
+            return response()->json(['status' => 0, 'code' => 400, 'message' => trans('messages.This user already exists')]);
         }
-        $user = User::create($data);
         return response()->json(['status' => 1, 'code' => 200, 'message' => trans('messages.user_created'), 'data' => new UserResource(User::find($user->id))]);
     }
 
