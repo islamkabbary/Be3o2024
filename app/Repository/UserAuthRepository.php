@@ -36,7 +36,7 @@ class UserAuthRepository implements UserAuthInterface
         return response()->json(['status' => 1, 'code' => 200, 'message' => trans('messages.You_have_logged_in_Successfully'), 'data' => $data]);
     }
 
-    public function register(UserRequest $request)
+    public function register($request)
     {
         $data = $request->except('_token', '_method', 'image');
         $oldUser = User::where('email', $data['email'])->orWhere('phone', $data['phone'])->first();
