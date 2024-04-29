@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.home');
 });
+
+Route::get('/lang/{lang}', function ($lang) {
+    Session::put('locale', $lang);
+    return redirect()->back();
+})->middleware("ChangeLanguage")->name('lang');
