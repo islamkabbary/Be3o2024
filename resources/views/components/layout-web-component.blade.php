@@ -1,17 +1,21 @@
 <!doctype html>
-<html>
-<x-head-component />
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+<x-head-component :title=$title />
 
-<body>
+<body class="relative overflow-x-hidden " x-data="{ toggelMenu: false }">
     <x-header-component />
-    <section class="bg-lightGray">
-        {{ $content }}
-    </section>
-    <!-- Footer container -->
+    <main>
+        {{ $main }}
+    </main>
+    {{ $content ?? '' }}
     <x-footer-component />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.js"
+        integrity="sha512-hRhHH3+D9xVKPpodEiYzHWIG8CWbCjp7LCdZ00K3/6xsdC3iT0OlPJLIwxSMEl07gya1Ae8iAqXjMMLpzqqh0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     {{ $customScripts ?? ' ' }}
-    {{-- @livewireScripts --}}
+    @livewireScripts
 </body>
 
 </html>

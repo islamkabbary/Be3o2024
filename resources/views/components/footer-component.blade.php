@@ -5,7 +5,7 @@
             <!--First links section-->
             <div class="mx-auto mb-6">
                 <a href="https://flowbite.com/" class="flex items-center">
-                    <p class="text-primaryColorBlue font-Weight5 font-poppins text-[30px]">Be3o</p>
+                    <p class="text-primary font-semibold font-poppins text-[30px]">Be3o</p>
                 </a>
                 <ul class="flex flex-col mt-2 mb-0 list-none">
                     <li>
@@ -53,7 +53,7 @@
 
             <!--Second links section-->
             <div class="mb-6">
-                <h5 class="mb-2.5 font-Weight5 font-poppins text-xl text-black">
+                <h5 class="mb-2.5 font-semibold font-poppins text-lg text-black">
                     Categories
                 </h5>
 
@@ -84,7 +84,7 @@
 
             <!--Third links section-->
             <div class="mb-6">
-                <h5 class="mb-2.5 font-Weight5 font-poppins text-xl text-black">
+                <h5 class="mb-2.5 font-semibold font-poppins text-lg text-black">
                     Categories
                 </h5>
 
@@ -106,7 +106,7 @@
 
             <!--Fourth links section-->
             <div class="mb-6">
-                <h5 class="mb-2.5 font-Weight5 font-poppins text-xl text-black">
+                <h5 class="mb-2.5 font-semibold font-poppins text-lg text-black">
                     Quick links
                 </h5>
 
@@ -132,30 +132,27 @@
             </div>
 
             <!--Five links section-->
-            <div class="hidden mb-6 lg:flex">
-                <h5 class="mb-2.5 font-Weight5 font-poppins text-xl text-black">
-                    Language
-                </h5>
-
-                <ul class="flex flex-col gap-3 list-none">
-                    <li>
-                        <a href="#!" class="font-medium font-poppins text-[16px] text-black">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="font-medium font-poppins text-[16px] text-black">Login</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="font-medium font-poppins text-[16px] text-black">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="font-medium font-poppins text-[16px] text-black">Website Terms
-                            And Conditions </a>
-                    </li>
-                    <li>
-                        <a href="#!" class="font-medium font-poppins text-[16px] text-black">Privacy
-                            Policy</a>
-                    </li>
-                </ul>
+            <div class="hidden lg:flex flex-col gap-6 mb-5">
+                <div class="flex flex-col gap-3">
+                    <h5 class="font-semibold font-poppins text-lg text-black">
+                        Language
+                    </h5>
+                    <select name="location" id="location"
+                        class="bg-white rounded-sm relative w-full h-12 border border-borderColor max-w-44 p-3">
+                        <option value="Alexandria">Alexandria</option>
+                    </select>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h5 class="font-semibold font-poppins text-lg text-black">
+                        Be3ly Apps :
+                    </h5>
+                    <div class="w-44 h-12 relative bg-black px-4 py-2 rounded-sm">
+                    </div>
+                    <div class="w-44 h-12 relative bg-black px-4 py-2 rounded-sm">
+                    </div>
+                    <div class="w-44 h-12 relative bg-black px-4 py-2 rounded-sm">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
